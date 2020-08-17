@@ -94,7 +94,8 @@ export const config = {
 				project: './e2e/tsconfig.json'
 			},
 			env: {
-				protractor: true
+				protractor: true,
+				jasmine: true
 			}
 		}
 	]

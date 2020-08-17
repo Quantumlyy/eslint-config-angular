@@ -18,14 +18,26 @@ export const config = {
 	],
 	'overrides': [
 		{
-			files: ['*.component.ts'],
+			files: [
+				'*.module.ts'
+			],
+			rules: {
+				'@typescript-eslint/no-extraneous-class': 0
+			}
+		},
+		{
+			files: [
+				'*.component.ts'
+			],
 			parser: '@typescript-eslint/parser',
 			parserOptions: {
 			  project: './tsconfig.app.json',
 			  ecmaVersion: 2020,
 			  sourceType: 'module'
 			},
-			plugins: ['@angular-eslint/template'],
+			plugins: [
+				'@angular-eslint/template'
+			],
 			processor: '@angular-eslint/template/extract-inline-html'
 		},
 		{

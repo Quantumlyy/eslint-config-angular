@@ -86,7 +86,9 @@ export const config = {
 		{
 			files: [
 				'e2e/src/**/*.e2e-spec.ts',
-				'e2e/src/**/*.po.ts'
+				'e2e/src/**/*.po.ts',
+				'e2e/protractor.conf.ts',
+				'e2e/protractor.conf.js'
 			],
 			parserOptions: {
 				ecmaVersion: 2020,

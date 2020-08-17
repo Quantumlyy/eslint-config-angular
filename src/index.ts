@@ -1,8 +1,6 @@
 export const config = {
 	'env': {
-		browser: true,
-		protractor: true,
-		jasmine: true
+		browser: true
 	},
 	'extends': [
 		'plugin:@typescript-eslint/recommended',
@@ -15,13 +13,25 @@ export const config = {
 		project: './tsconfig.eslint.json'
 	},
 	'plugins': [
-		'@angular-eslint/template',
 		'@angular-eslint',
 		'@typescript-eslint'
 	],
 	'overrides': [
 		{
-			files: ['*.component.html'],
+			files: ['*.component.ts'],
+			parser: '@typescript-eslint/parser',
+			parserOptions: {
+			  project: './tsconfig.app.json',
+			  ecmaVersion: 2020,
+			  sourceType: 'module'
+			},
+			plugins: ['@angular-eslint/template'],
+			processor: '@angular-eslint/template/extract-inline-html'
+		},
+		{
+			files: [
+				'*.component.html'
+			],
 			parser: '@angular-eslint/template-parser',
 			parserOptions: {
 			  project: './tsconfig.app.json',
@@ -34,7 +44,46 @@ export const config = {
 				'@angular-eslint/template/no-call-expression': 'error',
 				'@angular-eslint/template/no-negated-async': 'error'
 			},
-			plugins: ['@angular-eslint/template']
+			plugins: [
+				'@angular-eslint/template'
+			]
+		},
+		{
+			'files': [
+				'src/**/*.spec.ts', 'src/**/*.d.ts'
+			],
+			'parser': '@typescript-eslint/parser',
+			'parserOptions': {
+			  project: './tsconfig.spec.json',
+			  ecmaVersion: 2020,
+			  sourceType: 'module'
+			},
+			'extends': [
+				'plugin:@typescript-eslint/recommended',
+				'@quantumly',
+				'plugin:jasmine/recommended'
+			],
+			'plugins': [
+				'jasmine',
+				'@typescript-eslint'
+			],
+			'env': {
+				jasmine: true
+			}
+		},
+		{
+			files: [
+				'e2e/src/**/*.e2e-spec.ts',
+				'e2e/src/**/*.po.ts'
+			],
+			parserOptions: {
+				ecmaVersion: 2020,
+				sourceType: 'module',
+				project: './e2e/tsconfig.json'
+			},
+			env: {
+				protractor: true
+			}
 		}
 	]
 };

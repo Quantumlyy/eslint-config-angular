@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.2](https://github.com/QuantumlyTangled/eslint-config-angular/compare/v1.2.1...v1.2.2) (2020-08-17)
+
+
+### Bug Fixes
+
+* allow jasmine in protractor conf files ([c200c37](https://github.com/QuantumlyTangled/eslint-config-angular/commit/c200c371212a2918d1843d49e3992ae28d989346))
+
 ### [1.2.1](https://github.com/QuantumlyTangled/eslint-config-angular/compare/v1.2.0...v1.2.1) (2020-08-17)
 
 

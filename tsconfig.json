@@ -1,21 +1,17 @@
 
 {
-	"compileOnSave": true,
+	"extends": "@quantumly/eslint-config",
 	"compilerOptions": {
-		"allowSyntheticDefaultImports": true,
-		"alwaysStrict": true,
-		"emitDecoratorMetadata": true,
-		"experimentalDecorators": true,
-		"incremental": true,
-		"lib": ["esnext"],
-		"module": "commonjs",
-		"moduleResolution": "node",
-		"noUnusedLocals": true,
-		"pretty": true,
-		"resolveJsonModule": true,
+		"target": "es2015",
 		"sourceMap": true,
-		"strict": true,
-        "target": "esnext",
-        "preserveConstEnums": true
+		"experimentalDecorators": true,
+		"declaration": false,
+		"importHelpers": true,
+		"downlevelIteration": true,
+		"moduleResolution": "node",
+		"lib": [
+			"ES2018",
+			"DOM"
+		]
 	}
 }
